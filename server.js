@@ -15,7 +15,7 @@ const server = http.createServer(app);
 
 const PORT = Number(process.env.PORT || 5000);
 const MONGO_URI = process.env.MONGO_URI;
-const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "http://localhost:5173";
+
 
 const ROOM_LATITUDE = Number(process.env.ROOM_LATITUDE);
 const ROOM_LONGITUDE = Number(process.env.ROOM_LONGITUDE);
@@ -29,12 +29,7 @@ if (!Number.isFinite(ROOM_LATITUDE) || !Number.isFinite(ROOM_LONGITUDE)) {
   throw new Error("ROOM_LATITUDE and ROOM_LONGITUDE must be valid numbers");
 }
 
-app.use(
-  cors({
-    origin: CLIENT_ORIGIN,
-    methods: ["GET", "POST"]
-  })
-);
+
 app.use(express.json());
 
 const allowedOrigins = [
