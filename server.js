@@ -39,7 +39,7 @@ app.use(express.json());
 
 const io = new Server(server, {
   cors: {
-    origin: CLIENT_ORIGIN,
+    origin: ["http://localhost:5173","https://room-door.vercel.app"],
     methods: ["GET", "POST"]
   }
 });
