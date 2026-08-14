@@ -37,12 +37,17 @@ app.use(
 );
 app.use(express.json());
 
-const io = new Server(server, {
-  cors: {
-    origin: ["http://localhost:5173","https://room-door.vercel.app"],
-    methods: ["GET", "POST"]
-  }
-});
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://room-door.vercel.app",
+];
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST"],
+  })
+);
 
 const ROOMMATES = [
   { roommateId: "roommate-a", name: "Roommate A" },
