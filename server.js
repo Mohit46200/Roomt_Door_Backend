@@ -76,15 +76,15 @@ const io = new Server(server, {
 const ROOMMATES = [
   {
     roommateId: "roommate-a",
-    name: "Roommate A",
+    name: "Mohit",
   },
   {
     roommateId: "roommate-b",
-    name: "Roommate B",
+    name: "Himanshu",
   },
   {
     roommateId: "roommate-c",
-    name: "Roommate C",
+    name: "Harsh",
   },
 ];
 
