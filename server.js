@@ -99,9 +99,11 @@ async function seedRoommates() {
         roommateId: roommate.roommateId,
       },
       {
+        $set: {
+          name: roommate.name,
+        },
         $setOnInsert: {
           roommateId: roommate.roommateId,
-          name: roommate.name,
           inside: false,
         },
       },
@@ -111,7 +113,7 @@ async function seedRoommates() {
     );
   }
 
-  console.log("Roommates seeded");
+  console.log("Roommates seeded/updated");
 }
 
 // -----------------------------
